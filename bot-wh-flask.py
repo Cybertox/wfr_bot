@@ -13,7 +13,7 @@ data_patern = re.compile(r'^[0-9]+/[0-9]+/[0-9]+/[0-9]+$', re.MULTILINE)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-    print(message.from_user.username + "pressed <<start>>")
+    print(message.from_user.username + " pressed <<start>>")
     bot.send_photo(message.chat.id,  photo="https://github.com/Cybertox/wfr_bot/blob/master/wf_profile.png?raw=true",
                    caption="Please, copy your stats from https://wayfarer.nianticlabs.com/profile \n and paste here. Or use inline mode")
 
@@ -35,7 +35,7 @@ def ratio_gen(message):
                 ratiodata[4], ratiodata[5])
 
         bot.send_message(message.chat.id, message_text_pattern, parse_mode='HTML')
-        print(message.from_user.username + "used stats-parser function")
+        print(message.from_user.username + " used stats-parser function")
         if message.chat.type != "private":
             bot.delete_message(message.chat.id, message.message_id)
 
@@ -84,7 +84,7 @@ def query_opr(query):
                 thumb_url=ratiodata[6]
             )
             bot.answer_inline_query(query.id, [r_data])
-            print(message.from_user.username + "used inline function")
+            print(message.from_user.username + " used inline function")
         except Exception as e:
             print("{!s}\n{!s}".format(type(e), str(e)))
     except AttributeError as e:
