@@ -35,6 +35,7 @@ def ratio_gen(message):
                 ratiodata[4], ratiodata[5])
 
         bot.send_message(message.chat.id, message_text_pattern, parse_mode='HTML')
+        print(message.from_user.username + "used stats-parser function")
         if message.chat.type != "private":
             bot.delete_message(message.chat.id, message.message_id)
 
@@ -65,8 +66,6 @@ def query_opr(query):
         for i in range(len(data)):
             data[i] = int(data[i])
         ratiodata = RatioGen.ratioGenerator(data[0], data[1], data[2], data[3])
-        print(data)
-        print(ratiodata)
         message_text_pattern = ""
         if ratiodata[3] == 'Onyx':
             message_text_pattern = "👀{0:,} 👍🏻{1:,} 👎🏻{2:,} 👯‍♂{3:,}\nRatio: <b>{4:.2%}</b>\nLimbo: <b>{5:,}</b>\nBadge: <b>{6}</b> (<i>{7:,} agreements</i>)".format(
@@ -85,6 +84,7 @@ def query_opr(query):
                 thumb_url=ratiodata[6]
             )
             bot.answer_inline_query(query.id, [r_data])
+            print(message.from_user.username + "used inline function")
         except Exception as e:
             print("{!s}\n{!s}".format(type(e), str(e)))
     except AttributeError as e:
