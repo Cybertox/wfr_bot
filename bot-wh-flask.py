@@ -13,7 +13,7 @@ data_patern = re.compile(r'^[0-9]+/[0-9]+/[0-9]+/[0-9]+$', re.MULTILINE)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
-    print(message.from_user.username)
+    print(message.from_user.username + "pressed <<start>>")
     bot.send_photo(message.chat.id,  photo="https://github.com/Cybertox/wfr_bot/blob/master/wf_profile.png?raw=true",
                    caption="Please, copy your stats from https://wayfarer.nianticlabs.com/profile \n and paste here. Or use inline mode")
 
