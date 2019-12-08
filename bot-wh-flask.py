@@ -2,6 +2,7 @@ import telebot
 import RatioGen
 import re
 from telebot import types
+import os
 from flask import Flask, request
 from config import TOKEN, PORT, URL
 
