@@ -1,1 +1,1 @@
-web: python bot-wh-flask.py
+web: python bot-wf-updater.py
