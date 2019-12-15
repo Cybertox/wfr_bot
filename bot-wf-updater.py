@@ -19,7 +19,7 @@ def ratio_gen(update, context):
         message_text_pattern = ""  # для онікса і не_онікса різні шаблони повідомлення
         username_message_pattern = ""  # в групах та супергрупах у вихлопі буде відображатись нікнейм
         if update.effective_chat.type != "private":
-            username_message_pattern = "<b>" + message.from_user.username + "</b>:\n"
+            username_message_pattern = "<b>" + update.message.from_user.username + "</b>:\n"
         if ratiodata[3] == 'Onyx':
             message_text_pattern = username_message_pattern + "👀{0:,} 👍🏻{1:,} 👎🏻{2:,} 👯‍♂{3:,}\nRatio: <b>{4:.2%}</b>\nLimbo: <b>{5:,}</b>\nBadge: <b>{6}</b> (<i>{7:,} agreements</i>)".format(
                data[0], data[1], data[2], data[3], ratiodata[1], ratiodata[2], ratiodata[3], ratiodata[0])
