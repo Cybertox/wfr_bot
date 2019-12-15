@@ -1,4 +1,4 @@
-from config import TOKEN
+from config import TOKEN, URL, PORT
 import logging
 import re
 from RatioGen import ratioGenerator, dataGenerator
