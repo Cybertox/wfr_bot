@@ -28,7 +28,7 @@ def ratio_gen(update, context):
             data[0], data[1], data[2], data[3], ratiodata[1], ratiodata[2], ratiodata[3], ratiodata[0],
                 ratiodata[4], ratiodata[5])
         context.bot.send_message(chat_id=update.effective_chat.id, text=message_text_pattern, parse_mode='HTML')
-        if update.effective_chat.type != "private"
+        if update.effective_chat.type != "private":
             context.bot.delete_message(chat_id=update.effective_chat.id, update.message.message_id)
 
     except Exception as e:
